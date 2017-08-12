@@ -1,0 +1,130 @@
+
+============unix commands for git bash==================
+cd /c/Users/avani/Desktop/work/
+vim filename
+esc and : ,then q! ... to get out of file
+paste =>shift+insert
+copy=> ctrl+x
+========================================================
+download and install git from https://git-scm.com/download/
+open git bash
+navigate to working directory
+configure git-
+git config --global user.name "Avani Joshi" 
+git config --global user.email "avaniklsjoshi@gmail.com"
+go and check gitconfig file
+----------------
+mkdir starlord  //project name, new repository
+cd starlord
+git init
+you can see new folder .git in starlord,, ls -al   //al- for hidden files, it is by default hidden
+----------------
+working-files==staging==commit
+
+create index.html file
+git status	//checking status, 1 unchecked file
+git add index.html	//OR git add -a //for all files //in staging area, ready for commit   
+git status
+git commit -m 'added index.html'
+git status
+git log		//To see all the git commits in the past you can use:
+git show <commit_id>
+To use a commit_id, you only need to use the first few characters.
+
+For an easier way to view commits, use a GUI (graphical user interface). These will let you see commits in an easy to view format.
+----------------
+create ssh key
+ssh-keygen -t rsa -C "avaniklsjoshi@gmail.com"     //you can enter a pass phrase but then everytime you have to enter that while staging ang commiting
+OR
+ssh-keygen -t rsa -b 4096 -C "your@email.com"
+You can leave the passphrase blank or create one if you like. The command will also tell you where you can find your new SSH key pair in your file directories.
+now go to the folder in which yous .ssh key is generated, described while generating.
+open id_rsa.pub, copy the contents
+go to github, then settings, then on lhs panel select ssh and gpg keys, on rhs panel add new ssh key
+give title ex "lenovo yoga" in my case, it is diff locations from where we are logging in, create your ssh key and use from any where.
+paste public ssh, create
+ssh -T git@github.com	//will create ssk connection & verifies connection 
+...
+There are a couple ways we can authenticate with GitHub (or other servers for that matter). We can do the following:
+
+username/password
+SSH keys
+While we could use username/password, it could get tedious entering in our password whenever we wanted to push/pull changes. SSH keys create a very secure connection and we won't have to bother with passwords anymore.
+
+SSH keys consist of creating a pair of keys, one public and one private. We'll generate the pair and place our public key with GitHub. Our private key will stay on our computer. Then we can connect and push/pull/clone from our online repos.
+------------------------
+go to github.com
+login avaniklsjoshi@gmail.com
+create new repo
+select owner/company group
+enter repo name
+fill in form create repo
+goto git bash
+git remote -v	//will show all your remote repo
+go to github.com, go to repo, click "clone or download", select ssh(since we have made ssh connection with gityou can also have https but then you have to enter username and password again and again)
+copy the ssh url
+git remote add origin git@github.com:avaniklsjoshi/starlord.git	//paste url
+git remote -v	//can see now :)
+git pull	//find a error coz we hadnt set the both master branch
+git branch --set-upstream-to=origin/master master	//second master is local master
+git pull	//if this doesn't work try, git pull --allow-unrelated-histories
+git push
+...now everytime do to make a project...
+go to github create new repo		//or make it at local and then on remote and then merge, OR do these simple steps
+copy clone ssl url
+go to desired root folder
+git clone git@github.com:avaniklsjoshi/superman.git	//paste
+create file in folder
+git add -A
+git commit -m "your message"
+git push
+:)
+-----------------------------
+branching
+git branch	//viewing all
+git branch my-branch	//creating new
+git checkout my-branch	//to go in that branch
+git checkout -b <new-branch-name>	//To create a new branch and checkout at the same time:
+git branch -d my-branch	//for deleting
+git merge my-branch	//for merging
+..
+go to project folder supermAN
+create index.html, write basic code
+       git status
+   77  git add -A
+   79  git commit -m "index.html added"
+   80  git push
+do changes in index.html
+   81  git branch home-updates	//add branch
+   82  git checkout home-updates
+   83  git add -A
+   84  git commit -m "index branch message added"
+   85  git push		//wont work so use next command
+   86  git push --set-upstream origin home-updates
+..when work is done with branch.
+git checkout master
+git merge home-updates
+git push
+git branch -d home-updates
+git branch
+---------------------
+use github desktop app,https://desktop.github.com/
+it helps in viewing changes locally
+---------------------
+use github in vs code
+ctrl +shift+p
+write in your command, without writing git
+if error comes go to the cmd line
+and do fix it
+---------------------
+if we have to merge multiple branches, there are chances of conflicts, but git highlights the error in vs code(commit from vs code editor), rectify it and then go ahead.
+---------------------
+git log
+git revert <enter few characters of commit_id>
+you'll be in some file,quit that.    //reverting a commmit is also a commit
+in your project file see the reverted result, can also check in desktop git ui
+git revert HEAD 	//reverting the revert, in case we want to undo changes
+quit the file
+if some conflicts occurs go to code editor edit code and try again.
+
+:):):):):):):):):):):):):)

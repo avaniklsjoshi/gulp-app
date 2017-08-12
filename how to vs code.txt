@@ -1,0 +1,32 @@
+ctrl + `  => for terminal
+ctrl+tab  switch tabs
+ctrl+shift+m  problems
+ctrl+shift+y  debug console outputs
+right click, go to definition	//for jumping in functions
+right click,peek definition 	//for editing
+ctrl+ \ => split window, to close ctrl+w
+ctrl+shift+e   explorer
+ctrl+shift+g   git
+ctrl+shift+d   debug
+ctrl+shift+y   open debug console
+ctrl+shift+x   extensions
+ctrl+shift+u   npm/outputs
+ctrl+=   increase the font
+alt toggle menu bar
+ctrl+b close side bar
+git bash in vs code go to user setting and change windows cmd to git bash location 
+----
+ctrl+shift+p => command pallette
+ctrl+shift+p, type menu toggle, select from dropdown	//to hide unhide menu bar,,,,, alt to toggle
+activity, 
+status,
+sidebar
+full	//fullscreen
+git
+search OR ctrl+shift+f
+https://docs.emmet.io/cheat-sheet/
+===============
+http://shanalikhan.github.io/2015/12/15/Visual-Studio-Code-Sync-Settings.html
+sync token  f8c1792b190de76175c5360fc603165f99b0045d
+
+Sync : Upload Complete. GIST ID : 51adba1dbcaabe9938442f0c1985a5f3 . Please copy and use this ID in other machines to download settings.
