@@ -1,0 +1,58 @@
+how to gulp
+npm install -g gulp-cli
+npm init
+npm install --save-dev gulp
+touch gulpfile.js
+write task, 
+gulp
+gulp css ///  specific our task
+npm install gulp-sass --save-dev
+create folder sass, in it styles.scss
+go to gulpfile
+---
+gulp.task('css',function(){
+  gulp.src(['./sass/styles.scss'])
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('Error',sass.logError))
+  .pipe(csssMin())
+  .pipe(autoprefixer())
+  .pipe(sourcemaps.write())
+  .pipe(t('./dist/css'));
+
+});
+----
+npm install gulp-sourcemaps gulp-cssmin gulp-autoprefixer --save-dev
+npm install --save-dev gulp-load-plugins
+go to gulpfile.js, replace these 4 lines by last line..
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var csssMin=require('gulp-cssmin');
+var sourcemaps=require('gulp-sourcemaps');
+
+var plugins=require(gulp-load-plugins)();
+and also in css task,
+gulp.task('css',function(){
+  gulp.src(['./sass/styles.scss'])
+  .pipe(plugins.sourcemaps.init())
+  .pipe(plugins.sass().on('Error',plugins.sass.logError))
+  .pipe(plugins.csssMin())
+  .pipe(plugins.autoprefixer())
+  .pipe(plugins.sourcemaps.write())
+  .pipe(gulp.dest('./dist/css'));
+
+});
+-----
+npm install --save jquery
+create folder src/js, admin.js magic.js
+write code in magic.js
+npm install --save-dev gulp-uglify
+go to gulpfile add js task remember to add return statement to make it asynch.
+gulp js
+npm install --save-dev gulp-concat
+go to gulp file, js task
+  .pipe(plugins.concat(all.js))
+npm install --save-dev gulp-babel babel-preset-es2015 //es 6
+gulp
+npm install --save-dev browser-sync
+gulp serve
+gulp

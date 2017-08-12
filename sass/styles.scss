@@ -1,0 +1,14 @@
+$primary-color:#9DE1EF ;
+
+body{
+  background: $primary-color;
+  font-family: Arial, Helvetica, sans-serif;
+  h1,h2,h3{
+    color: #545454;
+  }
+  p{
+    background: #fff;
+    border-radius: 4px;
+    padding: 50px;
+  }
+}
